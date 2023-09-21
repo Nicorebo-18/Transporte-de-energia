@@ -37,24 +37,24 @@ D = A;
 
 U20 = U1/A;
 I10 = C*U20;
-modU20 = abs(U20);
-modI10 = abs(I10);
+modU20 = abs(U20)
+modI10 = abs(I10)
 
 % Apartado B ------------
 
-tol = 0.1;
-while abs(modU20 - 235e3) > tol
-    if modU20 > 235e3
-        long -= 0.1;
-    else
-        long += 0.1;
-    end
-
-    A = cosh(gamma*long);
-    U20 = U1/A;
-    modU20 = abs(U20) * sqrt(3);
-    printf("Módulo U20 = %d; Long = %d\n", modU20, long)
-end
+%tol = 0.1;
+%while abs(modU20 - 235e3) > tol
+%    if modU20 > 235e3
+%        long -= 0.1;
+%    else
+%        long += 0.1;
+%    end
+%
+%    A = cosh(gamma*long);
+%    U20 = U1/A;
+%    modU20 = abs(U20) * sqrt(3);
+%    printf("Módulo U20 = %d; Long = %d\n", modU20, long)
+%end
 
 % Apartado C ------------
 
@@ -84,5 +84,3 @@ end
 
 
 % ----------- Imprimir Resultados -----------
-modI10
-modU20
