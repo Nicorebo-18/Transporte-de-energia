@@ -25,7 +25,7 @@ fdp2 = 0.8;     % En retraso
 
 % Apartado A
 P2 = S2 * fdp2;
-Q2 = S2 * tan(acos(fdp2));
+Q2 = P2 * tan(acos(fdp2)); % KTZ -> Poner Para la tangente la pot activa no la total
 S2total = P2 + 1i * Q2;
 I2 = conj(S2total/U2);
 UI1_a = [A B;C D] * [U2;I2];
@@ -48,7 +48,7 @@ abs(UI1_a(2))             % 794.64
 disp("\nApartado B")
 %UI1_b
 abs(UI1_b(1))*sqrt(3)     % 530.75e3
-abs(UI1_b(2))             % 891.1416e
+abs(UI1_b(2))             % 891.1416
 
 % # Herramientas para imprimir en octave #
 
