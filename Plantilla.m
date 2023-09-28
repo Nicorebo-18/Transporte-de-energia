@@ -16,5 +16,16 @@ format shortEng           % Pone el formato de ingeniería
 % ----------- Cálculos-----------
 
 % ----------- Imprimir Resultados -----------
-%printf("",) 
 disp("\nResultados: \n")
+
+
+% # Herramientas para imprimir en octave #
+
+% printf("",) 
+% --- Para Plots ---
+% h=plot (x, sin (x));
+% xlabel ("x");
+% ylabel ("sin (x)");
+% title ("Simple 2-D Plot");
+% waitfor(h);
+% -------------------
