@@ -28,17 +28,27 @@ P2 = S2 * fdp2;
 Q2 = S2 * tan(acos(fdp2));
 S2total = P2 + 1i * Q2;
 I2 = conj(S2total/U2);
-UI1 = [A B;C D] * [U2;I2];
+UI1_a = [A B;C D] * [U2;I2];
 
-
+% Apartado B
+Xc = -50i;
+Tc = [1 Xc; 0 1];
+TL = [A B; C D];
+UI1_b = Tc * TL * Tc * [U2;I2];
 
 
 % ----------- Imprimir Resultados -----------
-disp("\nResultados: \n")
-UI1
-abs(UI1(1))*sqrt(3)     % 622.15e3
-abs(UI1(2))             % 794.64
+disp("Resultados:")
 
+disp("\nApartado A")
+%UI1_a
+abs(UI1_a(1))*sqrt(3)     % 622.15e3
+abs(UI1_a(2))             % 794.64
+
+disp("\nApartado B")
+%UI1_b
+abs(UI1_b(1))*sqrt(3)     % 530.75e3
+abs(UI1_b(2))             % 891.1416e
 
 % # Herramientas para imprimir en octave #
 
