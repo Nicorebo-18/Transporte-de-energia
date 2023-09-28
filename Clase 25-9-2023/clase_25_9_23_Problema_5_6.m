@@ -47,6 +47,7 @@ Q2 = -68.75e6i/3;      % Iteración desde 80e6i hasta -68.75e6i
 I2 = conj((P2+Q2)/U2);
 U1 = abs(A*U2+B*I2) * sqrt(3)
 Qc = Q2 - Qcarga;
+modQc = abs(Qc*3) 
 
 
 % ----------- Imprimir Resultados -----------
@@ -57,5 +58,5 @@ U1
 disp("\nApartado B")
 P2max                   %695.732e+006
 disp("\nApartado C")
-Qc*3                    %Potencia por fase * 3 fases
+modQc                    %Potencia por fase * 3 fases
 disp("\n")
