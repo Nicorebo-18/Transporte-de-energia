@@ -32,7 +32,7 @@ Z = B;
 Y_2 = (A-1)/B;
 theta = angle(Z);
 psi0 = angle(Y_2);
-P2max = 3*(abs(U1)*abs(U2)/abs(Z) - abs(U2)^2*cos(theta)/abs(Z) - abs(Y_2)*abs(U2)^2*cos(psi0));
+P2max = 3*(abs(U1/sqrt(3))*abs(U2)/abs(Z) - abs(U2)^2*cos(theta)/abs(Z) - abs(Y_2)*abs(U2)^2*cos(psi0));
 
 % Apartado C ------
 %S2 = (400e6*fdpcarga)/3 + 400e6i*fdpcarga*tan(acos(fdpcarga))/3;
