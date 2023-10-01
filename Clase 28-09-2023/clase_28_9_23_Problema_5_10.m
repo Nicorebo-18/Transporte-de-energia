@@ -31,10 +31,13 @@ S2 = P2 + 1i*Q2;
 A = cosh(gamma*dist);
 B = Zc * sin(gamma*dist);
 
+Un = sqrt(B * conj(S2/(sqrt(3)*0.9)) / (1-0.9*A));
 
 
 % ----------- Imprimir Resultados -----------
 disp("\nResultados: \n")
+Un
+abs(Un)
 
 
 % # Herramientas para imprimir en octave #
