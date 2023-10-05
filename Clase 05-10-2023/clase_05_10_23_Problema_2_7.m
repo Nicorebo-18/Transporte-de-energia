@@ -29,6 +29,10 @@ xT1 = 0.1i;
 xT2 = xT1;
 xT3 = xT1;
 
+ST1 = 150e6;
+ST2 = ST1;
+ST3 = ST1;
+
 XL = 60i;
 U4 = 69e3;
 
@@ -74,7 +78,7 @@ U1 = u1 * Ub1;
 
 % ----------- Imprimir Resultados -----------
 disp("\nResultados: \n")
-disp(["Tension en el nudo U1: " num2str(abs(U1)) " V |_ " num2str(angle(U1))])) %27.062e3
+disp(["Tension en el nudo U1: " num2str(abs(U1)/1e3) " kV |_ " num2str(angle(U1))]) %27.062e3
 
 % # Herramientas para imprimir en octave #
 
