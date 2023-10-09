@@ -56,6 +56,7 @@ fdp = 0.8;   %  ╔═══ En Retraso (+) -> Si fuese en adelanto sería (-)
 U3 = 154e3;  %  V
 S3 = SCARGA*fdp + 1i*SCARGA*sin(acos(fdp));
 s3 = S3/Sb;
+u3 = U3/Ub3;
 
 % Calculo de reactancia de los generadores
 SG1 = 50e6;
@@ -76,13 +77,17 @@ U1 = abs(u1)*Ub1/1e3;   % En kV
 
 % Apartado b
 zcarga = abs(u3)^2/conj(s3);
+Zcarga = zcarga*Zb3;
 
 
 % ----------- Imprimir Resultados -----------
 disp("\nResultados: \n")
 
 disp(["Tension en el nudo U1: " num2str(U1) " kV "]) %254.1173e3
-disp(["Impedancia por unidad de carga: " num2str(U1) " Ohm "]) %379.26+284.45i
+disp(["Impedancia por unidad de carga: " num2str(zcarga) " Ohm en p.u. "]) %379.26+284.45i
+disp(["Impedancia de la carga: " num2str(Zcarga) " Ohm "]) 
+
+
 
 
 % # Herramientas para imprimir en octave #
