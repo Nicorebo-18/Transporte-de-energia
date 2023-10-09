@@ -61,7 +61,7 @@ perdtrans = abs(itotal)^2*real(zt12);
 PTrans = perdtrans*Sb/1e3;  % En kW
 
 % Potencia del generador
-pgen = real(scarga) + perd + perdtrans;
+pgen = real(scarga) + perd + PTrans/Sb; % Ver xq no funciona con perdtrans
 Pgen = pgen*Sb;     % En W 
 
 
