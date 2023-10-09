@@ -41,8 +41,8 @@ zc = sqrt(zu/yu);
 
 i2 = 0;
 u1 = U1/Ub;
-U2 = 240e3;         % Este valor es el que hay que cambiar
-u2 = U2/Ub;
+U2 = 241.23e3;         % Este valor es el que hay que cambiar
+u2 = U2/(Ub*sqrt(3));
 
 A = cosh(gamma*long);
 B = zc*sinh(gamma*long);
