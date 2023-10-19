@@ -22,7 +22,7 @@ i12b = i2/(1+x12b/x12a);
 i12a = i12b*x12b/x12a;
 
 s12a = u2*conj(i12a);
-s12a = u2*conj(i12b);
+s12b = u2*conj(i12b);
 
 % *Modificación -> Trafo de Módulo
 t = 1.03;
@@ -38,14 +38,24 @@ utrd = cos(-2*pi/180) + 1i*sin(-2*pi/180);
 u1trd = (i2*x12a*x12b+x12b+x12a*utrd)/(x12a+x12b);
 i12atrd = (u1trd-u2)/x12a;
 i12btrd = (u1trd-utrd)/x12b;
-s12atrd = u2*conj(i12atrd)
-s12btrd = u2*conj(i12btrd)
+s12atrd = u2*conj(i12atrd);
+s12btrd = u2*conj(i12btrd);
 
 % ----------- Imprimir Resultados -----------
 disp("\nResultados: \n")
 
 
+disp("\nSin Trafo:")
+s12a
+s12b
 
+disp("\nCon Trafo de Modulo (Reactiva):")
+s12atrm
+s12btrm
+
+disp("\nCon Trafo de Fase (Activa):")
+s12atrd
+s12btrd
 
 % # Herramientas para imprimir en octave #
 
