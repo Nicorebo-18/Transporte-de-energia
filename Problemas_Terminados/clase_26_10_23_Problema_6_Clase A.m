@@ -142,14 +142,14 @@ Ybus = [Y11 Y12 Y13 Y14 Y15 Y16 Y17;
         Y41 Y42 Y43 Y44 Y54 Y46 Y47;
         Y51 Y52 Y53 Y54 Y55 Y56 Y57;
         Y61 Y62 Y63 Y64 Y65 Y66 Y67;
-        Y71 Y72 Y73 Y74 Y75 Y76 Y77]
+        Y71 Y72 Y73 Y74 Y75 Y76 Y77];
 
 
 
 
 % ----------- Imprimir Resultados -----------
 disp("\nResultados: \n")
-
+Ybus
 
 
 
