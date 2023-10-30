@@ -15,14 +15,14 @@ format shortEng           % Pone el formato de ingeniería
 % - Para ejecutarlo en Octave, poner esta sección al principio del script
 % - Para ejecutarlo en Matlab, poner esta sección al final del script
 
-function f = ec_prob6_1(x)
-    global u1 d1 p2 q2 y g  %variables conocidas compartidas por este script
+function f = ec_prob6_1b(x)
+    global u1 u2 d1 p2 q2 y g  %variables conocidas compartidas por este script
 
     n=2;                    %número de nudos
-    u=[u1 x(3)];            %idem que en script principal
-    d=[d1 x(4)];            %idem
-    p=[x(1) p2];            %idem
-    q=[x(2) q2];            %idem
+    u = [u1 u2];            %idem que en script principal        
+    d = [d1 x(4)];          %idem
+    p = [x(1) p2];          %idem
+    q = [x(2) x(3)];        %idem
 
     f(2*n)=0;
 
@@ -44,7 +44,7 @@ end
 
 % ----------- Definir variables -----------
 
-global u1 d1 p2 q2 y g  % Variables conocidas compartidas con la función
+global u1 u2 d1 p2 q2 y g  % Variables conocidas compartidas con la función
 
 z12 = 0.5i;
 y12 = 1/z12;
@@ -62,6 +62,7 @@ u1 = 1;
 d1 = 0;
 
 % Nudo 2 (Nudo PQ)
+u2 = 1;
 pg2 = 0;
 pd2 = 0.5;
 p2 = pg2 - pd2;
@@ -70,13 +71,15 @@ qg2 = 1;
 qd2 = 1;
 q2 = qg2 - qd2;
 
+sd2 = pd2 + 1i*qd2;
+
 % Cálculo de los nudos
-x0 = [0.5 0 1 0];       % [p1 q1 u2 d2]
-x = fsolve(@(x)ec_prob6_1(x), x0);
-u = [u1 x(3)];
+x0 = [0.5 0 1 0];       % [p1 q1 q2 d2]
+x = fsolve(@(x)ec_prob6_1b(x), x0);
+u = [u1 u2];
 d = [d1 x(4)];
 p = [x(1) p2];
-q = [x(2) q2];
+q = [x(2) x(3)];
 
 % Cálculo del flujo de potencia
 U = u .* cos(d) + 1i*u .* sin(d);       % Símbolo .* significa multiplicar elemento a elemento de 2 matrices
@@ -88,28 +91,17 @@ s21 = U(2)*conj(i21);
 
 perd12 = s12 + s21;
 
+S = p + 1i*q;
+sg2 = S(2) + sd2;
+
 
 % ----------- Imprimir Resultados -----------
+
 disp("\nResultados: \n")
-u   % 1             965.9258e-3
-d   % 0             -261.7994e-3
-p   % 500e-3        -500e-3
-q   % 133.9746e-3   0
+x       % 0.5       63.5083e-3      63.5083e-3      -252.6803e-3
 
-s12     % 500e-3        133.9746e-3 i
-s21     % -500e-3       9.5955e-12 i
-perd12  % 0             133.9746e-3 i
+s12     % 0.5       63.5083e-3 i
+s21     % -0.5      63.5083e-3 i
+perd12  % 0         127.0167e-3 i
 
-
-% # Herramientas para imprimir en octave #
-
-% printf("",) 
-% disp() con [num2str()]
-
-% --- Para Plots ---
-% h=plot (x, sin (x));
-% xlabel ("x");
-% ylabel ("sin (x)");
-% title ("Simple 2-D Plot");
-% waitfor(h);
-% -------------------
+sg2     % 0         1.0635 i
