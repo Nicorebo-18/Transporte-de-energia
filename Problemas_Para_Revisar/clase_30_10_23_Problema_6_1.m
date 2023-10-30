@@ -11,6 +11,37 @@ clear                     % Borra todas las variables
 format shortEng           % Pone el formato de ingeniería
 
 
+% ------------ Funciones ------------
+% - Para ejecutarlo en Octave, poner esta sección al principio del script
+% - Para ejecutarlo en Matlab, poner esta sección al final del script
+
+function f = ec_prob6_1(x)
+    global u1 d1 p2 q2 y g  %variables conocidas compartidas por este script
+
+    n=2;                    %número de nudos
+    u=[u1 x(3)];            %idem que en script principal
+    d=[d1 x(4)];            %idem
+    p=[x(1) p2];            %idem
+    q=[x(2) q2];            %idem
+
+    f(2*n)=0;
+
+    for h=1:n
+        sumap=0;                    % Resetea variable a cero
+        sumaq=0;                    % Resetea variable a cero
+
+        for k=1:n
+            sumap = sumap + (u(k)*y(h,k)*cos(d(h)-d(k)-g(h,k)));
+            sumaq = sumaq + (u(k)*y(h,k)*sin(d(h)-d(k)-g(h,k)));
+        end
+
+        f(h)  =u(h)*sumap - p(h);   % ecuaciones de potencia activa
+        f(h+n)=u(h)*sumaq - q(h);   % ecuaciones de potencia reactiva
+
+    end
+end
+
+
 % ----------- Definir variables -----------
 
 global u1 d1 p2 q2 y g  % Variables conocidas compartidas con la función
@@ -41,7 +72,7 @@ q2 = qg2 - qd2;
 
 % Cálculo de los nudos
 x0 = [0.5 0 1 0];       % [p1 q1 u2 d2]
-x = fsolve(@(x)ec_prob6_1(x), x0)
+x = fsolve(@(x)ec_prob6_1(x), x0);
 u = [u1 x(3)];
 d = [d1 x(4)];
 p = [x(1) p2];
@@ -68,37 +99,6 @@ q   % 133.9746e-3   0
 s12     % 500e-3        133.9746e-3 i
 s21     % -500e-3       9.5955e-12 i
 perd12  % 0             133.9746e-3 i
-
-
-% ------------ Funciones ------------
-% - Para ejecutarlo en Octave, poner esta sección al principio del script
-% - Para ejecutarlo en Matlab, poner esta sección al final del script
-
-function f = ec_prob6_1(x)
-    global u1 d1 p2 q2 y g  %variables conocidas compartidas por este script
-
-    n=2;                    %número de nudos
-    u=[u1 x(3)];            %idem que en script principal
-    d=[d1 x(4)];            %idem
-    p=[x(1) p2];            %idem
-    q=[x(2) q2];            %idem
-
-    f(2*n)=0;
-
-    for h=1:n
-        sumap=0;                    % Resetea variable a cero
-        sumaq=0;                    % Resetea variable a cero
-
-        for k=1:n
-            sumap = sumap + (u(k)*y(h,k)*cos(d(h)-d(k)-g(h,k)));
-            sumaq = sumaq + (u(k)*y(h,k)*sin(d(h)-d(k)-g(h,k)));
-        end
-
-        f(h)  =u(h)*sumap - p(h);   % ecuaciones de potencia activa
-        f(h+n)=u(h)*sumaq - q(h);   % ecuaciones de potencia reactiva
-
-    end
-end
 
 
 % # Herramientas para imprimir en octave #
