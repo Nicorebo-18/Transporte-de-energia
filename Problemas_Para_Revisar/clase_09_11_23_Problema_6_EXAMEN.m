@@ -195,8 +195,8 @@ q2 = imag(sg2-sd2);
 %%%%%% NUDO 3 %%%%% - PQ
 sg3 = 0;
 sd3 = 0;
-p3= real(sg3-sd3);
-q3= imag(sg3-sd3);
+p3 = real(sg3-sd3);
+q3 = imag(sg3-sd3);
 
 
 
