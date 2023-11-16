@@ -79,21 +79,45 @@ Ybus = [yg1a+yg1b+yt12  -yt12       0           0           0;
 Zbus = inv(Ybus);
 
 
-% Cálculo de la falta
+% Producimos un cortocircuito en el nudo 5
+% Cálculo de la falta:
+n = 5;                          % Número de nudos
 q = 5;                          % Nudo donde se está produciendo el cortocircuito
-v = 1;                          % Tensión de prefalta en el nudo 1
-ifaltaFFF5 = v/Zbus(5,5);
+v = [1 1 1 1 1];                % Tensión de prefalta en el nudo 1
+ifaltaFFF5(q) = v(q)/Zbus(q,q);
+i23 = abs(ifaltaFFF5(q));
 
-IT12BT = ifaltaFFF5*Ib1/1e3;    % Resultado en KA
-I23 = ifaltaFFF5*Ib2/1e3;       % Resultado en KA
-IT12AT = I23;
-IT34AT = I23;
-I45 = ifaltaFFF5*Ib3/1e3;        % Resultado en KA
+ufalta = zeros(1,n);
+
+for k=1:n
+        ufalta(1,k) = v(1,k)-Zbus(k,q)*ifaltaFFF5(q);
+end
+
+ufalta
+i23 = abs((ufalta(2)-ufalta(3))*y23)
+i45 = abs((ufalta(4)-ufalta(5))*y45)
 
 
-% Tensión de falta en el nudo 1
-ufalta1 = v - Zbus(1,5)*ifaltaFFF5;
-Ufalta1 = ufalta1*Ub1/1e3;       % Resultado en KV
+
+
+
+
+
+
+%q = 5;
+%v = 1;                          % Tensión de prefalta en el nudo 1
+%ifaltaFFF5 = v/Zbus(5,5);
+%
+%IT12BT = ifaltaFFF5*Ib1/1e3;    % Resultado en KA
+%I23 = ifaltaFFF5*Ib2/1e3;       % Resultado en KA
+%IT12AT = I23;
+%IT34AT = I23;
+%I45 = ifaltaFFF5*Ib3/1e3;        % Resultado en KA
+%
+%
+%% Tensión de falta en el nudo 1
+%ufalta1 = v - Zbus(1,5)*ifaltaFFF5;
+%Ufalta1 = ufalta1*Ub1/1e3;       % Resultado en KV
 
 
 
@@ -105,11 +129,11 @@ Ufalta1 = ufalta1*Ub1/1e3;       % Resultado en KV
 % ----------- Imprimir Resultados -----------
 disp("\nResultados: \n")
 
-ifaltaFFF5
-abs(IT12BT)
-abs(I23)
-abs(I45)
-abs(Ufalta1)
+%ifaltaFFF5
+%abs(IT12BT)
+%abs(I23)
+%abs(I45)
+%abs(Ufalta1)
 
 
 
