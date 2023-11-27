@@ -114,8 +114,8 @@ Zinv = inv(Yinv);
 
 
 
-% === Cortocircuito en el nudo 4 ===
-q = 1;       % Nudo donde se produce el cortocircuito
+% ========== Cortocircuito en el nudo 1 ==========
+q = 2;       % Nudo donde se produce el cortocircuito
 
 % Matriz de tensiones de prefalta
 v = [0 0 0 0 0 0 0;     % Componente Homopolar
@@ -137,16 +137,47 @@ A = [1  1   1;
     1   a^2 a;
     1   a   a^2];
 
-ufalta4abc = A*ufalta(:,4);
+ufalta4abc = A*ufalta(:,4);         % Tensión en el nudo 4 después del cortocircuito
 UFALTA4ABC = ufalta4abc*UbG/1e3;    % Tensiones en kV
+
+% Con estrella triángulo, el resultado está mal ya que va a producirse un desfase
+% en el trafo 1-2, en los trafos estrella-estrella no se produce ningún desfase
+
+% Tensión del nudo 4 corregida del transformador
+h12 = 11;         % Índice horario típico
+ufalta4 = ufalta(:,4).*[0;cos(h12*pi/6)+1i*sin(h12*pi/6);cos(-h12*pi/6)+1i*sin(-h12*pi/6)];
+UFALTA4ABC_CON = ufalta4*UbG/1e3;    % Tensiones en kV
+
+% Resultado problema, tensión de falta en nudo 5 cuando corto en 2
+ufalta5 = ufalta(:,5);              % Expresado en componentes simétricas
+ufalta5abc = A*ufalta5;             % Tensión de las 3 fases en el nudo 5 después del cortocircuito
+UFALTA5ABC = ufalta5abc*UbG/1e3;    % Tensiones en kV
+
+
 
 
 
 % ----------- Imprimir Resultados -----------
 disp("\nResultados: \n")
+
+disp("\nSin tener en cuenta desfase trafo:")
 ufalta4abc
 UFALTA4ABC
 
+disp("\nCon desfase trafo:")
+ufalta4
+UFALTA4ABC_CON
+
+disp("\nComparacion modulos:")
+abs(UFALTA4ABC)
+abs(UFALTA4ABC_CON)
+
+disp("\nComparacion angulos:")
+angle(UFALTA4ABC)
+angle(UFALTA4ABC_CON)
+
+disp("\nResultado problema 9.5")
+abs(UFALTA5ABC)     % 15.5025 | 9.2572 | 9.2572
 
 
 
