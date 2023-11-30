@@ -124,6 +124,10 @@ I23 = i23*Ib2;
 disp("\nResultados: \n")
 abs(UFALTA6)
 
+% 13.5433 
+% 18.5174 
+% 18.6766
+
 
 
 % # Herramientas para imprimir en octave #
