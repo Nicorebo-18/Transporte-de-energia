@@ -39,9 +39,9 @@ Lu = 2e-7*log((Dab*Dbc*Dca)^(1/3)/(exp(-0.25)*diam/2));
 Zu = Ru + 2i*pi*50*Lu;
 
 % Lineas del sistema
-y23 = [1/((3e3*Zu*3.5)/Zb2);    1/((3e3*Zu)/Zb2);   1/((3e3*Zu)/Zb2)];
-y34 = [1/((7e3*Zu*3.5)/Zb2);    1/((7e3*Zu)/Zb2);   1/((7e3*Zu)/Zb2)];
-y36 = [1/((18e3*Zu*3.5)/Zb2);   1/((18e3*Zu)/Zb2);  1/((18e3*Zu)/Zb2)];
+y23 = [1/((3e3*Zu*3.5)/Zb2);1/((3e3*Zu)/Zb2);1/((3e3*Zu)/Zb2)];
+y34 = [1/((7e3*Zu*3.5)/Zb2);1/((7e3*Zu)/Zb2);1/((7e3*Zu)/Zb2)];
+y36 = [1/((18e3*Zu*3.5)/Zb2);1/((18e3*Zu)/Zb2);1/((18e3*Zu)/Zb2)];
 
 % Transformadores
 yt67 = 0.04i;
@@ -61,15 +61,15 @@ Yhomo = [yg1(1)+yt12    0       0                       0       0       0       
         0               y23(1)  -y23(1)                 0       0       0       0;
         0               -y23(1) y23(1)+y36(1)+y34(1)    -y34(1) 0       -y36(1) 0;
         0               0       -y34(1)                 y34(1)  0       0       0;
-        0               0       0                       0       yt45    0       0;
+        0               0       0                       -0.001i yt45    0       0;
         0               0       -y36(1)                 0       0       y36(1)  0;
-        0               0       0                       0       0       0       yt67];
+        0               0       0                       0       0       -0.001i yt67];
 
 % Matriz directa
 Ydir = [yg1(2)+yt12     -yt12       0                       0           0       0           0;
         -yt12           y23(2)+yt12 -y23(2)                 0           0       0           0;
         0               -y23(2)     y23(2)+y36(2)+y34(2)    -y34(2)     0       -y36(2)     0;
-        0               0           -y34(2)                 y34(2)+yt45  -yt45  0           0;
+        0               0           -y34(2)                 y34(2)+yt45 -yt45   0           0;
         0               0           0                       -yt45       yt45    0           0;
         0               0           -y36(2)                 0           0       y36(2)+yt67 -yt67;
         0               0           0                       0           0       -yt67       yt67];
@@ -83,7 +83,7 @@ Yinv = [yg1(3)+yt12     -yt12       0                       0           0       
         0               0           -y36(3)                 0           0       y36(3)+yt67 -yt67;
         0               0           0                       0           0       -yt67       yt67];
 
-Zhomo = inv(Yhomo);
+Zhomo = inv(Yhomo); % Para evitar warnings, en los trafos donde hemos puesto supuestamente 0, vamos a poner un valor bajo
 Zdir = inv(Ydir);
 Zinv = inv(Yinv);
 
@@ -99,7 +99,7 @@ ift = v(2,q)/(Zhomo(q,q)+Zinv(q,q));
 
 ufalta = zeros(3,7);
 for k=1:7
-    ufalta(:,k) = v(:,k)-diag([Zhomo(k,q);Zdir(k,q);Zinv(k,q)])*[ift,ift,ift];
+    ufalta(:,k) = v(:,k)-diag([Zhomo(k,q);Zdir(k,q);Zinv(k,q)])*[ift;ift;ift];
 end
 
 % Tenemos que arreglarlo porque hay desfases en los trafos
@@ -122,13 +122,13 @@ I23 = i23*Ib2;
 
 % ----------- Imprimir Resultados -----------
 disp("\nResultados: \n")
-UFALTA6
+abs(UFALTA6)
 
 
 
 % # Herramientas para imprimir en octave #
 
-% printf("",)
+% printf("",) 
 % disp() con [num2str()]
 
 % --- Para Plots ---
