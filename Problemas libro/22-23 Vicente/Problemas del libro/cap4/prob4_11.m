@@ -1,0 +1,21 @@
+%problema 4.11
+clc
+clear
+U=220e3;
+S=190.5e6;
+long=63e3;
+RHO=28.4e-9;
+%
+Sb=S;
+Ub=U;
+Zb=Ub^2/Sb;
+Ib=Sb/Ub/sqrt(3);
+%
+u=U/Ub;
+s=S/Sb;
+rho=RHO/Zb;
+%
+i=s/u;
+perd=2.5*s/100;
+A=i^2*rho*long/perd;
+diam=2*sqrt(A/pi)%m

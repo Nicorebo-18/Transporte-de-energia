@@ -1,0 +1,141 @@
+Examen extraordinario 2015/16 - Resultados obtenidos
+
+Problema 1
+Los conductores deberan estar separados una distancia de 8.4411 metros.
+Inductancia de la línea 0.0599 p.u.
+Resistencia de la línea 0.0080435 p.u.
+Susceptancia de la línea 0.18799 p.u.
+
+Problema 2
+Número de nudos: 3
+Nudo 1: Slack (1), PV (2), PQ (3) 1
+u1: 1.05
+d1: 0
+Nudo 2: Slack (1), PV (2), PQ (3) 3
+pg2: 0
+pd2: 256.6e6/Sb
+qg2: 0
+qd2: 110.2e6/Sb
+Nudo 3: Slack (1), PV (2), PQ (3) 3
+pg3: 0
+pd3: 138.6e6/Sb
+qg3: 0
+qd3: 45.2e6/Sb
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+
+Potencia que circula por la línea 13: 496.7627 MVA
+  Potencia activa: 430.3645 MW
+  Potencia reactiva: 248.112 MVAr
+Pérdidas totales del sistema: 35.1645 MW
+
+Problema 3
+Nudo en el que se produce el fallo: 2
+Tipo de fallo: FFF (1), FT (2), FF (3), FFT (4) 1
+Impedancia de fallo: 0
+Corriente de falta en la línea 13 para cada una de las fases (p.u.):
+
+ans(:,:,1) =
+
+     6.7742e+000
+
+
+ans(:,:,2) =
+
+     6.7742e+000
+
+
+ans(:,:,3) =
+
+     6.7742e+000
+
+Corriente de falta en la línea 13 para cada una de las fases (kA:
+
+ans(:,:,1) =
+
+     1.7005e+000
+
+
+ans(:,:,2) =
+
+     1.7005e+000
+
+
+ans(:,:,3) =
+
+     1.7005e+000
+
+Problema 4
+
+Nudo en el que se produce el fallo: 3
+Tipo de fallo: FFF (1), FT (2), FF (3), FFT (4) 1
+Impedancia de fallo: 0
+Corriente de cortocircuito en la línea 23 (por unidad), en cada una de las fases:
+
+ans(:,:,1) =
+
+     0.0000e+000 -  2.9412e+000i
+
+
+ans(:,:,2) =
+
+    -2.5471e+000 +  1.4706e+000i
+
+
+ans(:,:,3) =
+
+     2.5471e+000 +  1.4706e+000i
+
+Corriente de cortocircuito en la línea 34 (por unidad), en cada una de las fases:
+
+ans(:,:,1) =
+
+     0.0000e+000 -588.2353e-003i
+
+
+ans(:,:,2) =
+
+  -509.4267e-003 +294.1176e-003i
+
+
+ans(:,:,3) =
+
+   509.4267e-003 +294.1176e-003i
+
+Corriente de cortocircuito en la línea 23 (por unidad), en cada una de las fases:
+
+ans(:,:,1) =
+
+     2.9412e+000
+
+
+ans(:,:,2) =
+
+     2.9412e+000
+
+
+ans(:,:,3) =
+
+     2.9412e+000
+
+Corriente de cortocircuito en la línea 34 (por unidad), en cada una de las fases:
+
+ans(:,:,1) =
+
+   588.2353e-003
+
+
+ans(:,:,2) =
+
+   588.2353e-003
+
+
+ans(:,:,3) =
+
+   588.2353e-003

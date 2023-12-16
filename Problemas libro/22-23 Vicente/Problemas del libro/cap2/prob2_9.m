@@ -1,0 +1,19 @@
+%prob 2.9
+clear
+clc
+Sb=100e6;
+Ub=115e3;
+Zb=Ub^2/Sb;
+Ub1=23e3;
+xt=0.2i;
+xl=66.125i/Zb;
+s2=(184.8e6+6.6e6i)/Sb;
+s3=20e6i/Sb;
+u3=1;
+i3=conj(s3/u3);
+u2=u3+i3*xl;
+i2=conj(s2/u2);
+itotal=i2+i3;
+u1=u2+itotal*xt;
+U1=Ub1*abs(u1)
+U2=Ub*abs(u2)

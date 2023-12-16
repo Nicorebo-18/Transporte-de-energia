@@ -1,0 +1,42 @@
+Examen parcial 1 del curso 2012/13 - Resultados obtenidos
+
+Problema 1
+Número de nudos: 3
+Nudo 1: Slack (1), PV (2), PQ (3) 1
+u1: 69e3/Ub1
+d1: 0
+Nudo 2: Slack (1), PV (2), PQ (3) 3
+pg2: 0
+pd2: 0
+qg2: 0
+qd2: 0
+Nudo 3: Slack (1), PV (2), PQ (3) 3
+pg3: 0
+pd3: real(s3)
+qg3: 0
+qd3: imag(s3)
+y12: yt12
+y12_0: 0
+y13: 0
+y13_0: 0
+y21: yt12
+y21_0: 0
+y23: y23
+y23_0: 0
+y31: 0
+y31_0: 0
+y32: y23
+y32_0: 0
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+Tensión aplicada a la carga en el nudo 3: 13.2692 kV
+Pérdidas totales en todo el sistema: 0.016451 MW
+
+Problema 2
+Impedancia de cortocircuito del transformador, expresada en sistema por unidad: 0.026987+0.013207i

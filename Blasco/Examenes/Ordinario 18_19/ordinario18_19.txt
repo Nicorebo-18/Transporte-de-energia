@@ -1,0 +1,62 @@
+Examen ordinario 2018/19 - Resultados obtenidos al ejecutar el script
+
+Nudo 1: Slack (1), PV (2), PQ (3) 1
+u1: 136e3/Ub1
+d1: 0
+Nudo 2: Slack (1), PV (2), PQ (3) 3
+pg2: 0
+pd2: 0
+qg2: 0
+qd2: 0
+Nudo 3: Slack (1), PV (2), PQ (3) 2
+u3: 134.64e3/Ub1
+pg3: 60e6/Sb
+pd3: 0
+Nudo 4: Slack (1), PV (2), PQ (3) 3
+pg4: 0
+pd4: 15e6/Sb
+qg4: 0
+qd4: 7.5e6/Sb
+Nudo 5: Slack (1), PV (2), PQ (3) 3
+pg5: 0
+pd5: 30e6/Sb
+qg5: 0
+qd5: 15e6/Sb
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+Tensiones pre-falta en cada uno de los nudos:
+
+u =
+
+     1.0000e+000
+   988.8666e-003
+   990.0000e-003
+   981.1248e-003
+   977.0790e-003
+
+Nudo en el que se produce el fallo: 5
+Tipo de fallo: FFF (1), FT (2), FF (3), FFT (4) 2
+Impedancia de fallo: 0
+Corrientes de falta para cada una de las fases en la línea 25 (en A): 
+
+If25 =
+
+     1.4699e+003
+    26.8877e+000
+    78.2823e+000
+
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+Tensión en el nudo 5 con la línea 25 deshabilitada: 131.3954 kV

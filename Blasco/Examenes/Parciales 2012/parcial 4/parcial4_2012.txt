@@ -1,0 +1,179 @@
+Parcial 4, año 2012. - Resultados obtenidos
+
+Ejecución del código para las cuestiones 1 y 2.
+Número de nudos: 3
+Nudo 1: Slack (1), PV (2), PQ (3) 1
+u1: 250e3/Ub
+d1: 0
+Nudo 2: Slack (1), PV (2), PQ (3) 3
+pg2: 0
+pd2: real(s2)
+qg2: 0
+qd2: imag(s2)
+Nudo 3: Slack (1), PV (2), PQ (3) 3
+pg3: 0
+pd3: real(s3)
+qg3: 0
+qd3: imag(s3)
+
+y12: 1/z12
+y12_0: y12_0
+y13: 0
+y13_0: 0
+y21: 1/z12
+y21_0: y12_0
+y23: 1/z23
+y23_0: y23_0
+y31: 0
+y31_0: 0
+y32: 1/z23
+y32_0: y23_0
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+
+Cuestión 3:
+Tensión en cada uno de los nudos:
+
+ans =
+
+   250.0000e+003
+   197.0931e+003
+   183.6657e+003
+
+Cuestión 2:
+Pérdidas en la línea Central/Saint-Denis: 9.0447 MW
+Pérdidas en la línea Saint-Denis/Le Port: 0.97675 MW
+
+Ejecución del código para las cuestiones 3,4 y 5.
+Número de nudos: 3
+Nudo 1: Slack (1), PV (2), PQ (3) 1
+u1: 250e3/Ub
+d1: 0
+Nudo 2: Slack (1), PV (2), PQ (3) 3
+pg2: 0
+pd2: real(s2)
+qg2: 0
+qd2: imag(s2)
+Nudo 3: Slack (1), PV (2), PQ (3) 2
+u3: 210e3/Ub
+pg3: 0
+pd3: real(s3)
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+Tensión en cada uno de los nudos:
+
+ans =
+
+   250.0000e+003
+   213.3322e+003
+   210.0000e+003
+
+Cuestión 3:
+Tensión en la subestación de Saint-Denis: 213.3322 kV
+
+Cuestión 4:
+Pérdidas en la línea Central/Saint-Denis: 6.212 MW
+Pérdidas en la línea Saint-Denis/Le Port: 0.48746 MW
+
+Cuestión 5:
+Potencia del banco de condensadores a intalar en Le Port: 28.3359 MVAr
+
+Ejecución del código para las cuestiones 6,7 y 8.
+Número de nudos: 3
+Nudo 1: Slack (1), PV (2), PQ (3) 1
+u1: 250e3/Ub
+d1: 0
+Nudo 2: Slack (1), PV (2), PQ (3) 2
+u2: 225e3/Ub
+pg2: 0
+pd2: real(s2)
+Nudo 3: Slack (1), PV (2), PQ (3) 3
+pg3: 0
+pd3: real(s3)
+qg3: 0
+qd3: imag(s3)
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+
+Cuestión 6:
+Tensión en la subestación de Le Port: 213.5265 kV
+
+Cuestión 7:
+Pérdidas en la línea Central/Saint-Denis: 4.8989 MW
+Pérdidas en la línea Saint-Denis/Le Port: 0.7227 MW
+
+Cuestión 8:
+Potencia del banco de condensadores a intalar en Saint-Denis: 55.7758 MVAr
+
+Ejecución del código para las cuestiones 9 y 10.
+Número de nudos: 3
+Nudo 1: Slack (1), PV (2), PQ (3) 1
+u1: 232e3/Ub;
+d1: 0
+Nudo 2: Slack (1), PV (2), PQ (3) 3
+pg2: 0
+pd2: real(s2)
+qg2: 0
+qd2: imag(s2)
+Nudo 3: Slack (1), PV (2), PQ (3) 3
+pg3: 0
+pd3: real(s3)
+qg3: 0
+qd3: imag(s3)
+
+y12: 1/z12
+y12_0: y12_0
+y13: 1/z13
+y13_0: y13_0
+y21: 1/z12
+y21_0: y12_0
+y23: 1/z23
+y23_0: y23_0
+y31: 1/z13
+y31_0: y13_0
+y32: 1/z23
+y32_0: y23_0
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+
+Cuestión 9:
+Tensión en la subestación de Saint-Denis: 194.579 kV
+Tensión en la subestación de Le Port: 190.8981 kV
+
+Cuestión 10:
+Pérdidas en la línea Central/Saint-Denis: 3.0028 MW
+Pérdidas en la línea Saint-Denis/Le Port: 0.77464 MW
+
+Cuestión 11:
+La solución que emplea 3 líneas es la que menores pérdidas de potencia presenta en las líneas, no obstante,
+no es la más eficiente a la hora de reducir la caída de tensión en los nudos de consumo, frente a la instalación
+de baterías de condensadores. Además, supone una inversión económica mayor a las otras alternativas.
+Sin embargo, tiene una gran ventaja frente a las otras soluciones, dado que con la configuración de 3 líneas,
+a pesar de la caída de una de las líneas del sistema no quedará sin alimentar ninguno de los nudos.
+Por su parte, las soluciones basadas en baterías de condensadores se presentan como opción previsiblemente más
+barata, frente a la configuración de 3 líneas, siendo está su mayor ventaja. No obstante, no se asegura la
+continuidad de suministro como en la otra opción.

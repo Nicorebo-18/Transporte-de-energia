@@ -1,0 +1,199 @@
+Examen ordinario 21/22 - Resultados de ejecución del script
+
+a) Circuitos equivalentes en pi nominal para las líneas eléctricas.
+Matriz de transmisión de la línea 45 (modelo equivalente en pi nominal): 
+
+T45 =
+
+   999.2966e-003 + 33.1727e-006i     6.8017e-003 +144.2227e-003i
+  -323.5732e-009 +  9.7473e-003i   999.2966e-003 + 33.1727e-006i
+
+Matriz de transmisión de la línea 23a (modelo equivalente en pi nominal): 
+
+T23a =
+
+   991.4691e-003 +241.3993e-006i     2.1513e-003 + 76.0247e-003i
+   -54.1756e-006 +222.5088e-003i   991.4691e-003 +241.3993e-006i
+
+Matriz de transmisión de la línea 23a (modelo equivalente en pi nominal): 
+
+T23b =
+
+   987.6713e-003 +325.3509e-006i     2.5885e-003 + 98.0890e-003i
+   -81.7861e-006 +248.2789e-003i   987.6713e-003 +325.3509e-006i
+
+b) Pérdidas del sistema eléctrico de potencia
+
+Número de nudos: 6
+Nudo 1: Slack (1), PV (2), PQ (3) 1
+u1: 14.52e3/Ub1
+d1: 0
+Nudo 2: Slack (1), PV (2), PQ (3) 3
+pg2: 0
+pd2: 0
+qg2: 0
+qd2: 0
+Nudo 3: Slack (1), PV (2), PQ (3) 3
+pg3: 0
+pd3: 0
+qg3: 0
+qd3: 0
+Nudo 4: Slack (1), PV (2), PQ (3) 3
+pg4: 0
+pd4: 750e6/Sb
+qg4: 0
+qd4: 200e6/Sb
+Nudo 5: Slack (1), PV (2), PQ (3) 3
+pg5: 0
+pd5: 0
+qg5: 0
+qd5: 0
+Nudo 6: Slack (1), PV (2), PQ (3) 2
+u6: 7.26e3/Ub4
+pg6: 125e6/Sb
+pd6: 0
+
+y12: 1/xt12
+y12_0: 0
+y13: 0
+y13_0: 0
+y14: 0
+y14_0: 0
+y15: 0
+y15_0: 0
+y16: 0
+y16_0: 0
+y21: 1/xt12
+y21_0: 0
+y23: 1/z23a+1/z23b
+y23_0: y23a_0+y23b_0
+y24: 0
+y24_0: 0
+y25: 0
+y25_0: 0
+y26: 0
+y26_0: 0
+y31: 0
+y31_0: 0
+y32: 1/z23a+1/z23b
+y32_0: y23a_0+y23b_0
+y34: 1/xt34
+y34_0: 0
+y35: 0
+y35_0: 0
+y36: 0
+y36_0: 0
+y41: 0
+y41_0: 0
+y42: 0
+y42_0: 0
+y43: 1/xt34
+y43_0: 0
+y45: 1/z34
+y45_0: y34_0
+y46: 0
+y46_0: 0
+y51: 0
+y51_0: 0
+y52: 0
+y52_0: 0
+y53: 0
+y53_0: 0
+y54: 1/z34
+y54_0: y34_0
+y56: 1/xt56
+y56_0: 0
+y61: 0
+y61_0: 0
+y62: 0
+y62_0: 0
+y63: 0
+y63_0: 0
+y64: 0
+y64_0: 0
+y65: 1/xt56
+y65_0: 0
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+
+Pérdidas de potencia por hora: 24906.0967 MWh
+Pérdidas económicas por hora: 83.0203 €
+
+c) Corrientes de en los interruptores al producirse fallo fase-fase en medio de la línea 23a
+
+Nudo en el que se produce el fallo: 7
+Tipo de fallo: FFF (1), FT (2), FF (3), FFT (4) 3
+Impedancia de fallo: 0
+Corriente de falta en el interruptor 1: 
+
+ans(:,:,1) =
+
+    19.0539e+000
+
+
+ans(:,:,2) =
+
+     3.5065e+003
+
+
+ans(:,:,3) =
+
+     3.5035e+003
+
+Corriente de falta los interruptores 2 y 4: 
+
+ans(:,:,1) =
+
+    14.7679e+000
+
+
+ans(:,:,2) =
+
+   750.4552e+000
+
+
+ans(:,:,3) =
+
+   749.5584e+000
+
+Corriente de falta en el interruptor 3:
+
+ans(:,:,1) =
+
+    19.0539e+000
+
+
+ans(:,:,2) =
+
+     1.5892e+003
+
+
+ans(:,:,3) =
+
+     1.5946e+003
+
+Corriente de falta en los interruptor 5 y 6:
+
+ans(:,:,1) =
+
+   112.7394e+000
+
+
+ans(:,:,2) =
+
+     2.8979e+003
+
+
+ans(:,:,3) =
+
+     2.9498e+003
+
+d) Corriente de excitación necesaria en el generador 6 para que trabaje en las condiciones del punto b).
+
+Corriente de excitación necesaria: 547.1643 A

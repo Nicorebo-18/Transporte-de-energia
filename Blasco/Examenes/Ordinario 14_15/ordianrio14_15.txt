@@ -1,0 +1,50 @@
+Examen ordinario 2014/15 - Resultados obtenidos al ejecutar el script
+
+Resistencia total de la línea (expresada en por unidad): 0.29108
+Reactancia inductiva total de la línea (expresada en por unidad): 0+0.50343i
+Capacidad paralelo total de la línea (expresada en por unidad): 0-440705854109.9407i
+Número de nudos: 3
+Nudo 1: Slack (1), PV (2), PQ (3) 1
+u1: 1.0273
+d1: 0.21246
+Nudo 2: Slack (1), PV (2), PQ (3) 3
+pg2: 0
+pd2: 0.02
+qg2: 0
+qd2: 0.003
+Nudo 3: Slack (1), PV (2), PQ (3) 3
+pg3: 0
+pd3: 0.22
+qg3: 0
+qd3: 0.15
+
+y12: y12
+y12_0: 0
+y13: y13a+y13b
+y13_0: 0
+y21: y12
+y21_0: 0
+y23: y23
+y23_0: 0
+y31: y13a+y13b
+y31_0: 0
+y32: y23
+y32_0: 0
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+Matriz de admitancias del sistema: 
+
+Ybus =
+
+     3.3922e+000 -  6.3441e+000i    -1.5768e+000 +  2.4646e+000i    -1.8154e+000 +  3.8795e+000i
+    -1.5768e+000 +  2.4646e+000i     4.7322e+000 -  7.3941e+000i    -3.1554e+000 +  4.9295e+000i
+    -1.8154e+000 +  3.8795e+000i    -3.1554e+000 +  4.9295e+000i     4.9708e+000 -  8.8091e+000i
+
+Corriente que circula por la línea 23: 5000.9284 A
+La línea 23 funciona sobrecargada.

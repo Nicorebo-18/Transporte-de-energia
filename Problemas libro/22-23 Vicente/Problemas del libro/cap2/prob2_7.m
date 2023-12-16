@@ -1,0 +1,25 @@
+%problema 2.7
+Sb=150e6;
+UbL=230e3;
+UbG=23e3;
+Ub4=69e3;
+ZbL=UbL^2/Sb;
+XL=60i;
+xT1=0.1i;
+xT2=xT1;
+xT3=xT1;
+S4=120e6+60e6i;
+S2=150e6+60e6i;
+s4=S4/Sb;
+s2=S2/Sb;
+U4=69e3;
+u4=U4/Ub4;
+xl=XL/ZbL;
+i4=conj(s4/u4);
+u2=u4+i4*(xl+xT3);
+i2=conj(s2/u2);
+itotal=i2+i4;
+zeqt=(xT1^-1+xT2^-1)^-1;
+u1=u2+itotal*zeqt;
+modu1=abs(u1);
+U1=modu1*UbG

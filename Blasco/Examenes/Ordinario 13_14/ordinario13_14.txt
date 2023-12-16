@@ -1,0 +1,85 @@
+Examen ordinario 2013/14 - Resultados obtenidos
+
+Problema 1
+Impedancia de la línea por unidad de longitud: 0.00075829-0.00034935i Ohmios/m
+Susceptacia capacitiva de la línea por unidad de longitud: 0-3.0081e-09i Siemens/m
+
+Problema 2
+Número de nudos: 7
+Nudo 1: Slack (1), PV (2), PQ (3) 1
+u1: 220e3/Ub1
+d1: 0
+Nudo 2: Slack (1), PV (2), PQ (3) 3
+pg2: 0
+pd2: 0
+qg2: 0
+qd2: 0
+Nudo 3: Slack (1), PV (2), PQ (3) 3
+pg3: 0
+pd3: 0
+qg3: 0
+qd3: 0
+Nudo 4: Slack (1), PV (2), PQ (3) 3
+pg4: 0
+pd4: 0
+qg4: 0
+qd4: 0
+Nudo 5: Slack (1), PV (2), PQ (3) 3
+pg5: 0
+pd5: 2e6/Sb
+qg5: 0
+qd5: 1.1e6/Sb
+Nudo 6: Slack (1), PV (2), PQ (3) 3
+pg6: 0
+pd6: 0
+qg6: 0
+qd6: 0
+Nudo 7: Slack (1), PV (2), PQ (3) 3
+pg7: 0
+pd7: 0.6e6/Sb
+qg7: 0
+qd7: 0.2e6/Sb
+
+Equation solved.
+
+fsolve completed because the vector of function values is near zero
+as measured by the value of the function tolerance, and
+the problem appears regular as measured by the gradient.
+
+<stopping criteria details>
+Tensiones en todos los nudos del sistema en por unidad (fasores):
+
+U =
+
+     1.0000e+000 +  0.0000e+000i
+   980.5741e-003 - 33.7898e-003i
+   955.6412e-003 - 28.2832e-003i
+   910.1181e-003 - 16.3702e-003i
+   888.3035e-003 - 51.1381e-003i
+   923.1035e-003 - 25.8773e-003i
+   912.8869e-003 - 51.5901e-003i
+
+Módulo de la tensión en cada uno de los nudos:
+   Tensión a la salida de la subestación de Pueblogrande de los Botijos: 19623.1225 V
+   Tensión en la carga de Villabotijos de Abajo: 355.9097 V
+   Tensión en la carga de Villabotijos de Arriba: 365.7374 V
+
+Problema 3 REPASAR MATRICES DE ADMITANCIAS, RESULTADOS POCO PRECISOS
+Nudo en el que se produce el fallo: 5
+Tipo de fallo: FFF (1), FT (2), FF (3), FFT (4) 2
+Impedancia de fallo: 0
+Corrientes de falta a la salida de la subestación de Pueblogrande de los Botijos (en el lado de las líneas), en A:
+
+ans =
+
+   299.7659e+000
+   299.7659e+000
+   299.7659e+000
+
+Tensión de falta en el centro de transformación de Villabotijos de arriba (lado de alta de la subestación): 
+
+ans =
+
+    12.8931e+003
+    15.0083e+003
+    17.3874e+003
