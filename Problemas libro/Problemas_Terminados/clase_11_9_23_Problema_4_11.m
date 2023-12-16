@@ -23,7 +23,7 @@ I = S/(sqrt(3)*U);        % Hallamos la corriente nominal de la linea
 r_fase = perdidas_max/(3*I^2)    %Resistencia por fase
 diametro = sqrt((rho*long*4)/(pi*r_fase));  %Cálculo del diámetro del conductor
 
-diametro;                 %Imprimimos el resultado
+diametro                 %Imprimimos el resultado
 
 
 
