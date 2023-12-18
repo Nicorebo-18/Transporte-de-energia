@@ -139,7 +139,7 @@ x0 = [1 1 1 0 1 0 1 0]; %p1 q1 u2 d2 u3 d3 q4 d4
 x = fsolve(@(x)ec_probOrd23(x), x0);
 u = [u1 x(3) x(5) u4];
 d = [d1 x(4) x(6) x(8)];   
-p = [x(1) p2 p3 p4]; 
+p = [x(1) p2 p3 p4]
 q = [x(2) q2 q3 x(7)];
 
 
@@ -167,15 +167,6 @@ q2 = -105.35e6*1.2/Sb;
 p3 = -200e6*1.2/Sb;
 q3 = -123.94e6*1.2/Sb;
 p4 = (421e6-80e6*1.2)/Sb;
-
-% Matriz de admitancias
-Ybus = [y12+y012+y13+y013   -y12                -y13                0;
-        -y12                y12+y012+y24+y024    0                  -y24;
-        -y13                0                   y13+y013+y34+y034   -y34;
-        0                   -y24                -y34                y24+y024+y34+y034];
-
-y = abs(Ybus);
-g = angle(Ybus);
 
 x0 = [1 1 1 0 1 0 1 0]; %p1 q1 u2 d2 u3 d3 q4 d4
 x = fsolve(@(x)ec_probOrd23(x), x0);
