@@ -44,7 +44,7 @@ U1 = abs(A*U2+B*I2) * sqrt(3)   % Iteración hasta mantener la tensión deseada
 Qc = Q2 - Qcarga;
 modQc = abs(Qc*3) 
 
-% |||||||||||||||||| Compensación de la linea ||||||||||||||||||
+% |||||||||||||||||| Compensación de la linea con condensadores ||||||||||||||||||
 
 % Condensador en serie:
 % Tc = [1 Zc;0 1]
