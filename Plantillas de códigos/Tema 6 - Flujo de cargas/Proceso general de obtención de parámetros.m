@@ -82,6 +82,7 @@ yg1 = 1/zg1;
 
 
 % |||||| Definimos Nudos del Sistema: SLACK / PQ / PV ||||||
+% Para las potencias reactivas no ponemos la i, pero para las totales (s) si
 
 % Nudo - SLACK
 u = 1;
@@ -137,3 +138,23 @@ Potgen1 = (p(1) + real(sd1))*Sb/1e6;   % En MW
 % Pérdidas totales en las lineas
 perd = sum(p);
 PERD = sum(p)*Sb/1e6;  % En MW
+
+% Tensiones y Potencias Aparentes del sistema con ángulos
+U = u.*cos(d)+1i*u.*sin(d);
+S = p + 1i*q;
+
+i12 = (U(1)-U(2))*ylinea12+U(1)*y012;
+i21 = (U(2)-U(1))*ylinea12+U(2)*y012;
+s12 = U(1)*conj(i12);   % Flujo de Potencia de la linea 12
+s21 = U(2)*conj(i21);
+perd12 = s12+s21;       % Pérdidas de la linea 12
+
+% Potencia Aparente Generada
+potenciagenerador = p(1)+pd1 + q(1)*i+qd1*i;  % Como p1 = pg1-pd1 si le sumamos pd1 nos queda la generada
+
+% Sobrecarga
+Sobrecarga_linea13 = (abs(s13)-1)/1*100;    % Posibles soluciones: Poner 2 lineas en paralelo en tramo sobrecargado / Bajar la tensión
+
+% Linea se desconecta
+y12=0;
+y012=0;
