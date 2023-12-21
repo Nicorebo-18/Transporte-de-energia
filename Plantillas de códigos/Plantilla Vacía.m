@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                               %
 %          ------------ PROBLEMA X-X --------------             %
-%                    Clase XX/XX/2023                           %
+%                    Examen Ordinario                           %
 %                  Nicolás Rebollo Ugarte                       %
 %                                                               %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9,6 +9,7 @@
 clc                       % Borrar toda la Consola / Ventana de comandos
 clear                     % Borra todas las variables
 format shortEng           % Pone el formato de ingeniería
+disp("\nResultados: \n")
 
 
 % ----------- Definir variables -----------
@@ -22,7 +23,8 @@ format shortEng           % Pone el formato de ingeniería
 
 
 % ----------- Imprimir Resultados -----------
-disp("\nResultados: \n")
+
+
 
 
 
