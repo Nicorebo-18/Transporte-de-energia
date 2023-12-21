@@ -39,8 +39,8 @@ y012 = Y012./Yb;
 % Ejemplo Trafo: 3-4
 S34 = ;
 Z34 = [ ; ; ];
-z34 = Z34*(Sb/S34)*(Ub_BT/UBTTrafo);    % Poner o los dos lados de tensión (Tesion Base y del Trafo) del lado de baja o los dos de alta
-y34 = 1./z34;
+zt34 = Z34*(Sb/S34)*(Ub_BT/UBTTrafo);    % Poner o los dos lados de tensión (Tesion Base y del Trafo) del lado de baja o los dos de alta
+yt34 = 1./zt34;
 
 % Ejemplo Generador 1
 zg1 = [ ; ; ]*(Sb/SGen)*(UGen/UbG)^2; % Cambio de base del generador (Si lo necesita)
@@ -59,7 +59,7 @@ Yhomo = [];
 % Matriz de admitancias directas del sistema
 Ydir = [];
 
-% Matriz de admitancias inversas del sistema
+% Matriz de admitancias inversas del sistema (Igual que el Ydir pero con 3)
 Yinv = [];
 
 % Matrices de impedancias del sistema
@@ -94,7 +94,7 @@ ifft = [iffthomo;ifftdir;ifftinv];
 
 % Tensiones de falta según fila 3 tabla cortocircuitos
 ufalta = zeros(3,n);
-for k=1:4
+for k=1:n
     ufalta(:,k) = v(:,q)-diag([Zhomo(k,q);Zdir(k,q);Zinv(k,q)])*ifft;
 end
 
@@ -118,5 +118,12 @@ UFALTA1ABC = ufalta1abc*UbG/1e3;    % Tensiones en kV
 
 % Con Y-Δ o Δ-Y, el resultado está mal ya que va a producirse un desfase en el trafo
 h12 = 11;                           % Índice horario típico (Por si no nos dan si es un Yd11 o Dy7)
-ufalta1 = A*ufalta(:,1).*[0; cos(h12*pi/6)+1i*sin(h12*pi/6); cos(-h12*pi/6)+1i*sin(-h12*pi/6)];
-UFALTA1ABC_CON = ufalta1*Ub/1e3;   % Tensiones en kV
+
+%%% Factor de desfase %%%
+% BT->AT (Normalmente Δ-Y) -> Adelantar -> [0; cos(h*pi/6)+1i*sin(h*pi/6); cos(-h*pi/6)+1i*sin(-h*pi/6)]
+% AT->BT (Normalmente Y-Δ) -> Retrasar -> [0; cos(-h*pi/6)+1i*sin(-h*pi/6); cos(h*pi/6)+1i*sin(h*pi/6)]
+desfase = [0; cos(h12*pi/6)+1i*sin(h12*pi/6); cos(-h12*pi/6)+1i*sin(-h12*pi/6)];
+
+ufalta1 = ufalta(:,1).*desfase;
+ufalta1abc = A*ufalta1;
+UFALTA1ABC = ufalta1abc*Ub/1e3;   % Tensiones en kV

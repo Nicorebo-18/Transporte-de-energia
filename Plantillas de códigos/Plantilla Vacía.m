@@ -12,7 +12,7 @@ format shortEng           % Pone el formato de ingeniería
 disp("\nResultados: \n")
 
 
-% ----------- Definir variables -----------
+% ----------- Definimos las variables del enunciado -----------
 
 
 

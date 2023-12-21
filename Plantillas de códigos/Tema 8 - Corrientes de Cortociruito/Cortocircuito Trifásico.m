@@ -39,8 +39,8 @@ y012 = Y012/Yb;
 % Ejemplo Trafo: 3-4
 S34 = ;
 Z34 = ;
-z34 = Z34*(Sb/S34)*(Ub_BT/UBTTrafo);    % Poner o los dos lados de tensión (Tesion Base y del Trafo) del lado de baja o los dos de alta
-y34 = 1/z34;
+zt34 = Z34*(Sb/S34)*(Ub_BT/UBTTrafo);    % Poner o los dos lados de tensión (Tesion Base y del Trafo) del lado de baja o los dos de alta
+yt34 = 1/zt34;
 
 % Ejemplo Generador 1
 zg1 = () *(Sb/SGen)*(UGen/UbG)^2; % Cambio de base del generador (Si lo necesita)
