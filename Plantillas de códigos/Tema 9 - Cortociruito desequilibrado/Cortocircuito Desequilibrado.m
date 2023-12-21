@@ -14,9 +14,6 @@ format shortEng           % Pone el formato de ingeniería
 
 % ------------------- Parámetros del Enunciado -------------------
 
-% Variables conocidas del sistema + matrices de módulos (y) y ángulos (g) de Ybus
-global  y g
-
 % Definimos las bases principales
 Sb = ;
 Ub1 = ;
