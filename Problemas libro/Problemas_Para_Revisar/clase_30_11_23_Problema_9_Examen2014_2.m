@@ -65,7 +65,6 @@ Dbc = 1.75;
 Dca = 3.38;
 diam = 9.45e-3;
 Ru20 = 0.6136/1e3;    % Ohm/m
-J = 3.7;            % A/mm2
 
 Ru = Ru20*(1+4.03e-3*(50-20));  % Suponemos Tª max = 50ºC
 Lu = 2e-7*log((Dab*Dbc*Dca)^(1/3)/(exp(-0.25)*diam/2));
