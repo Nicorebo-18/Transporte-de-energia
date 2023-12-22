@@ -32,7 +32,8 @@ u0 = 4e-7*pi;             % Permeabilidad del aire
 c = 299792458;            % Velocidad de la luz
 eps0 = 1/(u0*c^2);        % Permitividad del aire
 
-R_cond = /1e3;     % Resistencia del conductor (Ohm/m)
+Ru20 = /1e3;     % Resistencia del conductor (Ohm/km -> Ohm/m)
+R_cond = Ru20*(1+4.03e-3*(Temperatura-20));  % Suponemos una Tª max de funcionamiento
 n = 2;                    % Número de conductores
 
 

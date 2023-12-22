@@ -16,7 +16,7 @@ disp("\nResultados: \n")  % Imprimimos los resultados
 U = 220e3;                % Tensión nominal de la linea
 f = 50;                   % Frecuencia de la red
 
-diam = 9.45e-3;             % Diámetro del conductor
+diam = 9.45e-3;             % Diámetro aparente del conductor
 r = diam/2;               % Radio del conductor
 
 u0 = 4e-7*pi;             % Permeabilidad del aire

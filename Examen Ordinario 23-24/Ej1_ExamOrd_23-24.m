@@ -13,12 +13,15 @@ format shortEng           % Pone el formato de ingeniería
 disp("\nResultados: \n")  % Imprimimos los resultados
 
 
-% ----------- Definimos las variables del enunciado -----------
+% --------------- Definimos las variables del enunciado --------------
 
 
 
 
-% ----------- Cálculos -----------
+% ------------------ Cálculos de los apartados ------------------
+
+
+
 
 
 
