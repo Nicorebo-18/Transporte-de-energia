@@ -34,7 +34,7 @@ S2 = 25e6*fdp2 + 1i*25e6*sin(acos(fdp2));     % Definimos la Potencia
 Lu = 2e-7 * log(D/(r*exp(-1/4)));	% Cálculo de la Inductancia
 Cu = 2*pi*eps0/log(D/r);		% Calculo de la Capacidad
 Z = (Ru + 2i*pi*f*Lu)*long;			% Impedancia Unitaria
-Y = 2i*pi*f*Cu*long;				% Susceptancia Unitaria
+Y = 2i*pi*f*Cu*long;				% Admitancia (=Susceptancia) Unitaria
 
 A = 1 + Z*Y/2;
 B = Z;
